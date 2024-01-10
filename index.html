@@ -26,7 +26,7 @@
     <div class="smallerHeader">
         <h3>When you are ready, click the shuffle button.  Click on two pieces to switch their places.  Rearrange the pieces to create the original picture. 
             Have fun!</h3>
-        <button>Shuffle</button>
+        <button onclick="shufflePuzzle();" id="shuffle">Shuffle</button>
     </div>
 
    
@@ -34,10 +34,10 @@
 <!--following 16 lines taken from cardGame project-->
     <div class="container" id="puzzleContainer">
        
-        <img onclick="" id="1" src="images/puzzle pic1.jpg">
-        <img onclick="" id="2" src="images/puzzle pic2.jpg">
-        <img onclick="" id="3"  src="images/puzzle pic3.jpg">
-        <img onclick=""  id="4" src="images/puzzle pic4.jpg">
+        <img onclick="switchCard('images/puzzle pic1.jpg', '1');" id="1" src="images/puzzle pic1.jpg">
+        <img onclick="switchCard('images/puzzle pic2.jpg', '2');" id="2" src="images/puzzle pic2.jpg">
+        <img onclick="switchCard('images/puzzle pic3.jpg', '3');" id="3"  src="images/puzzle pic3.jpg">
+        <img onclick="switchCard('images/puzzle pic4.jpg', '4');"  id="4" src="images/puzzle pic4.jpg">
 
         <img onclick="" id="5" src="images/puzzle pic5.jpg">
         <img onclick="" id="6" src="images/puzzle pic6.jpg">

@@ -5,7 +5,7 @@ img{
 
 
 .container{
-    gap: 5px;
+    gap: 1px;
     display: grid;
     grid-template-rows: 150px 150px 150px 150px;
     grid-template-columns:  200px 200px 200px 200px;      
