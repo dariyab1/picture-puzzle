@@ -2,17 +2,18 @@ let moves = 0;
 let firstPiece;
 let secondPiece;
 let secondPieceClicked;
-let userScore;
-let matchesToWin = 8;
-let started = false;
- 
+// let userScore;
+// let matchesToWin = 8;
+// let started = false;
+let firstscrc;
+
+let container = document.getElementById("puzzleContainer");
+let pieces = container.getElementsByTagName("img");
 
 function initialize() {
     userScore = document.getElementById("scoreValue");  
-    resetGame(); 
-    //document.getElementById("resetButton").addEventListener("click", resetGame); 
+    resetGame();     
 }
-
 
  function resetGame() {
     started = false;
@@ -20,42 +21,43 @@ function initialize() {
     moves = 0;
     matchesToWin = 8;
     //resetPuzzle();
-}
+}//don't need this functoin
 
 
 function shufflePuzzle() {
-    started = true;
+    started = true;//dont need this either
     secondPieceClicked = false;
-    const container = document.getElementById("puzzleContainer");
-    const cards = container.getElementsByTagName("img");
-
-    for (let i = cards.length - 1; i > 0; i--) {
+    
+    for (let i = pieces.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        container.appendChild(cards[j]);
+        container.appendChild(pieces[j]);
     }
 }
 
 
-function switchCard(newPiece, ID) {
+function switchCard(srcCurr, ID) {
 
     //moves++;
     //userScore.innerHTML = moves;
 
-    let currPiece = document.getElementById(ID);
-    let firstsrc="";
-
-    if (secondPieceClicked) {
+    
+   if (secondPieceClicked) {
         console.log("second piece clicked");
+        
+        
+        
         secondPiece = document.getElementById(ID);
-        secondPiece.src = firstsrc;
-        console.log(newPiece);
-        firstPiece.src=newPiece;
-        secondPieceClicked=false; //puzzles switch places but one image doesn't show
-    } else if (!secondPieceClicked) {
+        console.log(secondPiece.src)
+        secondPiece.src = firstPiece.src;
+        console.log(srcCurr)
+        firstPiece.src=srcCurr;
+        secondPieceClicked=false; 
+    }  
+    else if (!secondPieceClicked) {
         console.log("first piece clicked");
-        firstPiece = currPiece;
-        firstsrc=newPiece;
-        console.log(firstsrc);
+        firstPiece = document.getElementById(ID);
+        // firstsrc = firstPiece.src;
+        // console.log(firstsrc);
         secondPieceClicked = true;
     }
 }
