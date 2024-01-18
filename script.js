@@ -3,12 +3,14 @@ let firstPiece;
 let secondPiece;
 let secondPieceClicked;
 // let userScore;
-// let matchesToWin = 8;
+let matchesToWin = 16;
 // let started = false;
 let firstscrc;
+let secondsrc;
 
 let container = document.getElementById("puzzleContainer");
 let pieces = container.getElementsByTagName("img");
+console.log(pieces);
 
 function initialize() {
     userScore = document.getElementById("scoreValue");  
@@ -32,32 +34,38 @@ function shufflePuzzle() {
         const j = Math.floor(Math.random() * (i + 1));
         container.appendChild(pieces[j]);
     }
+    console.log(pieces);
+    console.log(pieces[0]);
 }
 
 
-function switchCard(srcCurr, ID) {
+function switchCard(ID) {
 
     //moves++;
     //userScore.innerHTML = moves;
+    let firstID;
 
-    
    if (secondPieceClicked) {
-        console.log("second piece clicked");
-        
-        
-        
         secondPiece = document.getElementById(ID);
-        console.log(secondPiece.src)
+        secondsrc=secondPiece.src;
         secondPiece.src = firstPiece.src;
-        console.log(srcCurr)
-        firstPiece.src=srcCurr;
+        firstPiece.src=secondsrc;
         secondPieceClicked=false; 
+        firstPiece.style.opacity = "1";  //got this from stack overflow: https://stackoverflow.com/questions/8517173/change-image-opacity-using-javascript
+        firstPiece.style.filter  = 'alpha(opacity=100)';
+        if(firstID==pieces[firstID].id){
+            matchesToWin++;
+            console.log("match made");
+        }
     }  
+
     else if (!secondPieceClicked) {
-        console.log("first piece clicked");
         firstPiece = document.getElementById(ID);
-        // firstsrc = firstPiece.src;
-        // console.log(firstsrc);
+        firstID=ID-1;
+        console.log(firstID);
+        console.log("puzzle piece "+pieces[firstID].id);
+        firstPiece.style.opacity = ".8";
+        firstPiece.style.filter  = 'alpha(opacity=80)';
         secondPieceClicked = true;
     }
 }

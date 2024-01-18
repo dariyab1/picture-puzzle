@@ -21,38 +21,39 @@
 </head>
 <body onload="initialize();">
     <div class="header">
-        <h2>The Matching Game </h2>
+        <h2>Picture Puzzle</h2> 
+        <p>When you are ready, click the shuffle button.  Click on two pieces to switch their places.  Rearrange the pieces to create the original picture. 
+            Have fun!</p>
     </div>
-    <div class="smallerHeader">
-        <h3>When you are ready, click the shuffle button.  Click on two pieces to switch their places.  Rearrange the pieces to create the original picture. 
-            Have fun!</h3>
-        <button onclick="shufflePuzzle();" id="shuffle">Shuffle</button>
-    </div>
+    
+            <div id="button"><button onclick="shufflePuzzle();" id="shuffle">Shuffle</button>
+            </div>
+    
 
    
 
 <!--following 16 lines taken from cardGame project-->
     <div class="container" id="puzzleContainer">
        
-        <img onclick="switchCard('images/puzzle pic1.jpg', '1');" id="1"  src="images/puzzle pic1.jpg">
-        <img onclick="switchCard('images/puzzle pic2.jpg', '2');" id="2"  src="images/puzzle pic2.jpg">
-        <img onclick="switchCard('images/puzzle pic3.jpg', '3');" id="3"   src="images/puzzle pic3.jpg">
-        <img onclick="switchCard('images/puzzle pic4.jpg', '4');"  id="4" src="images/puzzle pic4.jpg">
+        <img onclick="switchCard('1');" id="1"  src="images/puzzle pic1.jpg">
+        <img onclick="switchCard('2');" id="2"  src="images/puzzle pic2.jpg">
+        <img onclick="switchCard('3');" id="3"  src="images/puzzle pic3.jpg">
+        <img onclick="switchCard('4');"  id="4" src="images/puzzle pic4.jpg">
 
-        <img onclick="switchCard('images/puzzle pic5.jpg', '5');" id="5" src="images/puzzle pic5.jpg">
-        <img onclick="switchCard('images/puzzle pic6.jpg', '6');" id="6" src="images/puzzle pic6.jpg">
-        <img onclick="switchCard('images/puzzle pic7.jpg', '7');" id="7"  src="images/puzzle pic7.jpg">
-        <img onclick="switchCard('images/puzzle pic8.jpg', '8');" id="8" src="images/puzzle pic8.jpg">
+        <img onclick="switchCard('5');" id="5" src="images/puzzle pic5.jpg">
+        <img onclick="switchCard('6');" id="6" src="images/puzzle pic6.jpg">
+        <img onclick="switchCard('7');" id="7"  src="images/puzzle pic7.jpg">
+        <img onclick="switchCard('8');" id="8" src="images/puzzle pic8.jpg">
      
-        <img onclick="switchCard('images/puzzle pic9.jpg', '9');" id="9" src="images/puzzle pic9.jpg">
-        <img onclick="switchCard('images/puzzle pic10.jpg', '10');" id="10" src="images/puzzle pic10.jpg">
-        <img onclick="switchCard('images/puzzle pic11.jpg', '11');" id="11" src="images/puzzle pic11.jpg">
-        <img onclick="switchCard('images/puzzle pic12.jpg', '12');" id="12" src="images/puzzle pic12.jpg">
+        <img onclick="switchCard('9');" id="9" src="images/puzzle pic9.jpg">
+        <img onclick="switchCard('10');" id="10" src="images/puzzle pic10.jpg">
+        <img onclick="switchCard('11');" id="11" src="images/puzzle pic11.jpg">
+        <img onclick="switchCard('12');" id="12" src="images/puzzle pic12.jpg">
 
-        <img onclick="switchCard('images/puzzle pic13.jpg', '13');" id="13" src="images/puzzle pic13.jpg">
-        <img onclick="switchCard('images/puzzle pic14.jpg', '14');" id="14" src="images/puzzle pic14.jpg">
-        <img onclick="switchCard('images/puzzle pic15.jpg', '15');" id="15" src="images/puzzle pic15.jpg">
-        <img onclick="switchCard('images/puzzle pic16.jpg', '16');" id="16" src="images/puzzle pic16.jpg">
+        <img onclick="switchCard('13');" id="13" src="images/puzzle pic13.jpg">
+        <img onclick="switchCard('14');" id="14" src="images/puzzle pic14.jpg">
+        <img onclick="switchCard('15');" id="15" src="images/puzzle pic15.jpg">
+        <img onclick="switchCard('16');" id="16" src="images/puzzle pic16.jpg">
     </div>
 
 </body>
