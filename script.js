@@ -3,7 +3,7 @@ let firstPiece;
 let secondPiece;
 let secondPieceClicked;
 // let userScore;
-let matchesToWin = 16;
+let matchesMade;
 // let started = false;
 let firstscrc;
 let secondsrc;
@@ -40,7 +40,6 @@ function shufflePuzzle() {
 
 
 function switchCard(ID) {
-
     //moves++;
     //userScore.innerHTML = moves;
     let firstID;
@@ -52,25 +51,33 @@ function switchCard(ID) {
         firstPiece.src=secondsrc;
         secondPieceClicked=false; 
         firstPiece.style.opacity = "1";  //got this from stack overflow: https://stackoverflow.com/questions/8517173/change-image-opacity-using-javascript
-        firstPiece.style.filter  = 'alpha(opacity=100)';
-        if(firstID==pieces[firstID].id){
-            matchesToWin++;
-            console.log("match made");
-        }
+        firstPiece.style.filter  = 'alpha(opacity=100)'; 
+        
     }  
 
     else if (!secondPieceClicked) {
         firstPiece = document.getElementById(ID);
         firstID=ID-1;
-        console.log(firstID);
-        console.log("puzzle piece "+pieces[firstID].id);
         firstPiece.style.opacity = ".8";
         firstPiece.style.filter  = 'alpha(opacity=80)';
         secondPieceClicked = true;
     }
+
+    checkWin();
 }
 
-
+function checkWin(){
+    var win=true;
+    for (let i = 0; i < 16; i++) {
+        if(!document.getElementById(i+1).src.endsWith(`/images/puzzle pic${i+1}.jpg`)){
+            win=false
+        }
+    }
+    if(win==true){
+        console.log("win");
+        document.getElementById("instructions").innerHTML="YOU WON";
+    }
+}
 
 // Call initialize() to set up the initial game state when the page loads.
 initialize();
